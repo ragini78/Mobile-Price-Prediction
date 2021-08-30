@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Price Prediction</title>
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <style>
+        body
+        {
+            background-image : linear-gradient(to right,#f18973,#f18873d2);
+            margin-top : 150px !important ;
+        }
+        .register-left
+        {
+            text-align : center;
+            color : #fff;
+            padding : 30px ;
+        }
+        .register-left p
+        {
+            padding : 20px 20px 0;  
+
+        }
+        .register-right
+        {
+            padding : 50px;
+            background : #f8f8f8;
+            border-top-left-radius: 10% 50%;
+            border-bottom-left-radius: 10% 50%;
+            border : none;
+        }
+        .register-right h2
+        {
+            text-align: center;
+            margin-bottom: 10px;
+            color : #555
+        }
+        .register-form
+        {
+            padding : 30px;
+        }
+        .form-group
+        {
+            padding : 10px
+        }
+        .register-right .btn-primary
+        {
+            border-radius:1.5rem;
+            border : none;
+            width:120px;
+            background : #f18973;
+            font-weight : 600;
+            color :#fff;
+            margin-top:20px;
+            padding:10px;
+            float : right;
+        }
+        .register-right .btn-primary:hover
+        {
+            background : #f18873d2;
+        }
+    </style>
+
+</head>
+<body>
+<div class = "container">
+<div class="row">
+<div class = "col-md-10 offset=md-1" >
+<div class="row">
+    <div class="col-md-5 register-left" > 
+        <h1>Mobile Price Prediction</h1>
+        <p>Here you will able to know whether your mobile costs high or low</p>
+    </div>
+    
+    <div class="col-md-7 register-right" >
+        <form  action="http://127.0.0.1:5000/prediction" method = "POST">
+            <h2>Enter The Details Here</h2>
+            <div class="register-form" >
+                <div class="form-group">
+                    <input type ="number" name = "battery_power" class = "form-control" placeholder="Battery Power">
+                </div>
+                <div class="form-group">
+                    <input type ="number" name = "px_height" class = "form-control" placeholder="Height(px)">
+                </div>
+                <div class="form-group">
+                    <input type ="number" name = "px_width" class = "form-control" placeholder="Width(px)">
+                </div>
+                <div class="form-group">
+                    <input type ="number" name = "ram" class = "form-control" placeholder="RAM">
+                </div>
+                <input type="submit" class = "btn btn-primary"></input>
+                <div class ="form-group">
+                    <b>Prediction :{{prediction_output}}</b>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+</body>
+</html>
